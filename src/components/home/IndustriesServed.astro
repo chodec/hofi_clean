@@ -1,0 +1,96 @@
+---
+interface Industry {
+  title: string;
+  description: string;
+  iconGradient: string;
+  iconPath: string;
+  features: string[];
+}
+
+const industries: Industry[] = [
+  {
+    title: "Šetříme váš čas",
+    description: "Věnujte jej rodině, ne úklidu.",
+    iconGradient: "from-blue-500 to-blue-600",
+    iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    features: ["Stop neefektivnímu úklidu", "Čas pro rodinný život", "Rychlý a garantovaný servis"]
+  },
+  {
+    title: "Pečlivost a kvalita",
+    description: "Maximální pozornost k detailům.",
+    iconGradient: "from-teal-500 to-teal-600",
+    iconPath: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z",
+    features: ["Pozornost ke každému detailu", "Čistota pro vyšší produktivitu", "Garance čistoty"]
+  },
+  {
+    title: "Spolehlivost",
+    description: "Dodržujeme termíny",
+    iconGradient: "from-blue-600 to-teal-600",
+    iconPath: "M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z",
+    features: ["Garantované dodržení termínů", "Vždy včas na místě", "Plná odpovědnost za práci"]
+  },
+  {
+    title: "Diskrétnost",
+    description: "Chráníme vaše soukromí.",
+    iconGradient: "from-slate-700 to-slate-800",
+    iconPath: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+    features: ["Prověřený personál", "Maximální důvěra", "Diskrétní manipulace s majetkem"]
+  },
+  {
+    title: "Příznivé ceny",
+    description: "Profesionální úklid dostupný pro každého.",
+    iconGradient: "from-orange-500 to-orange-600",
+    iconPath: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4",
+    features: ["Vždy bez skrytých poplatků", "Cenová nabídka na míru", "Levnější než interní úklid"]
+  },
+  {
+    title: "Osobní přístup a Flexibilita",
+    description: "Zakládáme si na osobním přístupu.",
+    iconGradient: "from-purple-500 to-purple-600",
+    iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    features: ["Mimořádné požadavky vítány", "Rychlá komunikace", "Hledání řešení pro obě strany"]
+  }
+];
+
+const checkmarkPath = "M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z";
+---
+
+<section class="py-24 bg-linear-to-b from-slate-50 to-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+        Komplexní úklidová řešení <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-600">pro jakýkoliv prostor</span>
+      </h2>
+      <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Zakládáme si na osobním přístupu a pracujeme flexibilně, efektivně i lidsky. 
+        Široké portfolio služeb zabezpečujeme komplexně s cílem nalézt to nejvhodnější řešení pro obě strany.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {industries.map((industry) => (
+        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100">
+          <div class={`w-16 h-16 rounded-xl bg-linear-to-br ${industry.iconGradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={industry.iconPath} />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">{industry.title}</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            {industry.description}
+          </p>
+          <ul class="space-y-2 text-sm text-slate-600">
+            {industry.features.map((feature) => (
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-teal-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d={checkmarkPath} clip-rule="evenodd" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
