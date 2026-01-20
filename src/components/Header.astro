@@ -1,7 +1,7 @@
 ---
 import { NAVIGATION } from '@config/site';
 import { Package } from 'lucide-react';
-import MobileMenu from '@components/react/MobileMenu';
+import MobileMenu from 'MobileMenu';
 
 const { currentPathname } = Astro.props;
 const isActiveLink = (href: string) : boolean => { return href === currentPathname; }

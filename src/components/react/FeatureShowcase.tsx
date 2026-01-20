@@ -4,45 +4,38 @@ import { BrushCleaning, SoapDispenserDroplet, DoorOpen, House, Shield, Headphone
 import warehouseImg from '@assets/jednorazovyuklid.jpg';
 import truckImg from '@assets/generalni.jpg';
 import packageImg from '@assets/rekonstrukce.jpg';
-import barChart3Img from '@assets/rekonstrukce.jpg';
 import shieldImg from '@assets/okna.jpg';
 
 const features = [
   {
     icon: BrushCleaning,
-    title: 'Jednorázový úklid',
-    description: 'Ideální před oslavou, po rodinné sešlosti nebo když potřebujete rychle uklidit.',
+    title: 'Úklid domů a bytů',
+    description: 'Váš domov je vaším útočištěm. Dopřejte si dokonalý pocit čistoty a pohodlí díky našemu jednorázovému nebo generálnímu úklidu.',
     image: warehouseImg,
   },
   {
     icon: SoapDispenserDroplet,
-    title: 'Generální úklid',
-    description: 'Hloubkové čištění celého bytu nebo domu.',
+    title: 'Čisté kanceláře a firemní zázemí',
+    description: 'Zajistíme reprezentativní prostory pro vaše zaměstnance i klienty. Věříme, že v uspořádaném a čistém prostředí se rodí ty nejlepší úspěchy.',
     image: truckImg,
   },
   {
     icon: DoorOpen,
-    title: 'Úklid po rekonstrukci nebo stěhování',
-    description: 'Odstranění prachu a nečistot.',
+    title: 'Profesionální úklid po stavebních pracích',
+    description: 'Stavba či rekonstrukce jsou vyčerpávající. Zatímco vy budete odpočívat, my se postaráme o to, aby vaše nové prostory zářily čistotou.',
     image: packageImg,
   },
   {
     icon: House,
-    title: 'Úklid hal a kanceláří',
-    description: 'Čisté pracovní prostředí pro vyšší produktivitu.',
-    image: barChart3Img,
-  },
-  {
-    icon: Shield,
-    title: 'Mytí oken a výloh',
-    description: 'Profesionální mytí skel bez šmouh..',
+    title: 'Údržba průmyslových hal a objektů',
+    description: 'Expert úklid disponuje profesionálním týmem i špičkovou technikou. Díky spojení zkušeností, výkonných strojů a účinné chemie zajistíme perfektní čistotu i v náročném provozu.',
     image: shieldImg,
   }
 ];
 
 export default function FeatureShowcase() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
       {features.map((feature, index) => (
         <motion.div
           key={feature.title}
